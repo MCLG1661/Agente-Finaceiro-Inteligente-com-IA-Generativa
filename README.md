@@ -180,7 +180,7 @@ edu-agente-financeiro/
 
 ## Como Executar
 
-# 1. Instalar Ollama
+1. Instalar Ollama
 
 ```bash
 # Baixar em: ollama.com
@@ -188,13 +188,13 @@ ollama pull gpt-oss
 ollama serve
 ```
 
-# 2. Instalar Dependências
+2. Instalar Dependências
 
 ```bash
 pip install streamlit pandas requests
 ```
 
-# 3. Rodar o Edu
+3. Rodar o Edu
 
 ```bash
 streamlit run src/app.py
