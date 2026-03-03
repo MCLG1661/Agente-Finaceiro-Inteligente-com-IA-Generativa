@@ -62,7 +62,6 @@ O que o Edu NÃO faz :
 ## 🏗️ Detalhamento da Arquitetura
 
 ```mermaid
-
 flowchart TB
     subgraph UI["CAMADA DE APRESENTAÇÃO (Frontend)"]
         A[Usuário] --> B[Interface Streamlit]
@@ -178,7 +177,6 @@ Camada de Cache
 ## Arquitetura de Dados e Relacionamentos
 
 ```mermaid
-
 erDiagram
     PERFIL ||--o{ META : possui
     PERFIL {
@@ -336,7 +334,6 @@ Como é avaliada a qualidade do agente :
 ## Fluxo de Decisão do Agente
 
 ```mermaid
-
 stateDiagram-v2
     [*] --> Aguardando
     
@@ -374,7 +371,6 @@ stateDiagram-v2
 ## Fluxo de Tratamento de Erros
 
 ```mermaid
-
 flowchart LR
     E[Erro Detectado] --> T{Qual tipo?}
     
