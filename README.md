@@ -1,42 +1,24 @@
 # 💰 Edu - Agente Financeiro Inteligente com IA Generativa
 
-- Específicos do Projeto
 ![Agente](https://img.shields.io/badge/Agente-Edu%20Financeiro-8A2BE2?style=for-the-badge)
 ![Persona](https://img.shields.io/badge/Persona-Consultivo-FF69B4?style=for-the-badge)
 ![Anti-alucinação](https://img.shields.io/badge/Anti--alucinação-Ativo-success?style=for-the-badge)
 ![Edge Cases](https://img.shields.io/badge/Edge%20Cases-Tratados-green?style=for-the-badge)
-
-- Tecnologias
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.28.0-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-2.1.0-150458?style=for-the-badge&logo=pandas&logoColor=white)
 ![Ollama](https://img.shields.io/badge/Ollama-0.1.32-000000?style=for-the-badge&logo=ollama&logoColor=white)
 ![Llama](https://img.shields.io/badge/Llama-3.2%201B-FF6F00?style=for-the-badge&logo=meta&logoColor=white)
-
-- Tamanho do Código
 ![Linhas de Código](https://img.shields.io/badge/Linhas-500+-blue?style=for-the-badge)
 ![Arquivos](https://img.shields.io/badge/Arquivos-10-green?style=for-the-badge)
 ![Cobertura](https://img.shields.io/badge/Cobertura-85%25-brightgreen?style=for-the-badge)
-
- - Testes e Qualidade
 ![Tests](https://img.shields.io/badge/Tests-Passing-brightgreen?style=for-the-badge)
 ![Code Style](https://img.shields.io/badge/Code%20Style-Black-000000?style=for-the-badge)
 ![Security](https://img.shields.io/badge/Security-A%2B-success?style=for-the-badge)
-
-- Dependências
-![streamlit](https://img.shields.io/badge/streamlit-1.28.0-FF4B4B?style=flat-square&logo=streamlit)
 ![pandas](https://img.shields.io/badge/pandas-2.1.0-150458?style=flat-square&logo=pandas)
 ![requests](https://img.shields.io/badge/requests-2.31.0-FF6F00?style=flat-square)
 ![plotly](https://img.shields.io/badge/plotly-5.17.0-3F4F75?style=flat-square&logo=plotly)
-
-- Personalização
-![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-COLOR?style=for-the-badge)
-
- - Últimas Atualizações
-![Last Commit](https://img.shields.io/badge/Último%20Commit-Mar%C3%A7o%202025-orange?style=for-the-badge)
-![Build](https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge)
-![Downloads](https://img.shields.io/badge/Downloads-1.2k-blue?style=for-the-badge) 
-
+ 
 ---
  
 ## 📝Contexto
