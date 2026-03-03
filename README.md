@@ -9,9 +9,6 @@ Os assistentes virtuais nesse setor, estão evoluindo de simples chatbots reativ
 - **Cocriar soluções** financeiras de forma consultiva
 - **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
 
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
-
 ---
 
 ## 🎯 Funcionalidades
@@ -31,11 +28,11 @@ O que o Edu NÃO faz :
 
 ## 🔐 Princípios de Segurança
 
-- Nunca recomenda investimentos - Apenas educa
-- Baseado em dados reais - Sem alucinações
-- Edge cases tratados - Perguntas fora do escopo
-- Transparência - Assume quando não sabe
-- Privacidade - Dados locais, sem nuvem
+.1 Nunca recomenda investimentos - Apenas educa
+.2 Baseado em dados reais - Sem alucinações
+.3 Edge cases tratados - Perguntas fora do escopo
+.4 Transparência - Assume quando não sabe
+.5 Privacidade - Dados locais, sem nuvem
 
 > [!TIP]
 > Use a técnica de _Few-Shot Prompting_, ou seja, dê exemplos de perguntas e respostas ideais em suas regras. Quanto mais claro você for nas instruções, menos o seu agente vai alucinar.
