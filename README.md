@@ -370,29 +370,6 @@ stateDiagram-v2
 
 ```
 ---
-## Arquitetura de Memória e Contexto
-
-```mermaid
-mindmap
-  root((Agente Edu))
-    Memória Curta
-      Últimas 10 mensagens
-      Contexto atual
-      Perfil do usuário
-    Memória Longa
-      Histórico CSV
-      Transações passadas
-      Atendimentos anteriores
-    Base de Conhecimento
-      Produtos financeiros
-      Definições
-      Regras do sistema
-    Cache
-      Dados carregados
-      Respostas frequentes
-      Métricas de uso
-```
----
 
 ## Fluxo de Tratamento de Erros
 
