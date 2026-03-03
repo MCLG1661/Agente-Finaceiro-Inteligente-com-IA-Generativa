@@ -422,11 +422,14 @@ Todas as ferramentas abaixo possuem versões gratuitas:
 4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
 5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
 
+--- 
+
 ## 🙏 Agradecimentos
 - DIO
 - Bradesco
-- Bootcamp GenAI - Módulo : Desafio Final
 - Prof : Venilton Falvo Jr.
+
+---
 
 ## Autor
 - Marcus Guedes
