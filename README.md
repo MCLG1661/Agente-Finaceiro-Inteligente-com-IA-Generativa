@@ -15,7 +15,6 @@
 ![Tests](https://img.shields.io/badge/Tests-Passing-brightgreen?style=for-the-badge)
 ![Code Style](https://img.shields.io/badge/Code%20Style-Black-000000?style=for-the-badge)
 ![Security](https://img.shields.io/badge/Security-A%2B-success?style=for-the-badge)
-![pandas](https://img.shields.io/badge/pandas-2.1.0-150458?style=flat-square&logo=pandas)
 ![requests](https://img.shields.io/badge/requests-2.31.0-FF6F00?style=flat-square)
 ![plotly](https://img.shields.io/badge/plotly-5.17.0-3F4F75?style=flat-square&logo=plotly)
  
