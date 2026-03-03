@@ -155,9 +155,9 @@ Camada de Cache
 
 ---
 
-```
-erDiagram
-    PERFIL ||--o{ META : possui
+```erDiagram
+
+PERFIL ||--o{ META : possui
     PERFIL {
         string nome
         int idade
