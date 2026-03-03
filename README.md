@@ -155,10 +155,12 @@ Camada de Cache
 
 ---
 
+## Arquitetura de Dados e Relacionamentos
+
 ```mermaid
 
 erDiagram
-PERFIL ||--o{ META : possui
+    PERFIL ||--o{ META : possui
     PERFIL {
         string nome
         int idade
