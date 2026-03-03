@@ -155,8 +155,9 @@ Camada de Cache
 
 ---
 
-```erDiagram
+```mermaid
 
+erDiagram
 PERFIL ||--o{ META : possui
     PERFIL {
         string nome
