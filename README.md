@@ -136,7 +136,22 @@ Dados (JSON + CSV)
 Segurança (Validações)
 - Filtros de entrada
 - Detecção de edge cases
-- Protocolo "Não sei"      
+- Protocolo "Não sei"
+
+Camada de Cache
+- Carregamento otimizado de dados
+- Persistência de contexto
+- Recarregamento periódico (1 hora)       
+
+---
+
+## Esta arquitetura garante :
+
+- ✅ Segurança: Múltiplas camadas de validação
+- ✅ Performance: Cache e otimizações
+- ✅ Confiabilidade: Tratamento de erros robusto
+- ✅ Manutenibilidade: Código organizado por responsabilidades
+- ✅ Escalabilidade: Fácil adicionar novos dados/funcionalidades
 
 ---
 
@@ -238,8 +253,6 @@ Como é avaliada a qualidade do agente :
 - Precisão/assertividade das respostas
 - Taxa de respostas seguras (sem alucinações)
 - Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
 
 ---
 
