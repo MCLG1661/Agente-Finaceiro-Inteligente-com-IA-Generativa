@@ -5,7 +5,8 @@
 ![Ollama](https://img.shields.io/badge/Ollama-0.1.32-000000?style=for-the-badge&logo=ollama&logoColor=white)
 ![Llama](https://img.shields.io/badge/Llama-3.2%201B-FF6F00?style=for-the-badge&logo=meta&logoColor=white)
 
-
+---
+ 
 ## 📝Contexto
 
 Os assistentes virtuais nesse setor, estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, o objetivo é idealizar e prototipar um agente financeiro que utiliza IA Generativa para :
