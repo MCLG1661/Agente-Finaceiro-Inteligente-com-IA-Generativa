@@ -28,11 +28,11 @@ O que o Edu NÃO faz :
 
 ## 🔐 Princípios de Segurança
 
-.1 Nunca recomenda investimentos - Apenas educa
-.2 Baseado em dados reais - Sem alucinações
-.3 Edge cases tratados - Perguntas fora do escopo
-.4 Transparência - Assume quando não sabe
-.5 Privacidade - Dados locais, sem nuvem
+1. Nunca recomenda investimentos - Apenas educa
+2. Baseado em dados reais - Sem alucinações
+3. Edge cases tratados - Perguntas fora do escopo
+4. Transparência - Assume quando não sabe
+5. Privacidade - Dados locais, sem nuvem
 
 > [!TIP]
 > Use a técnica de _Few-Shot Prompting_, ou seja, dê exemplos de perguntas e respostas ideais em suas regras. Quanto mais claro você for nas instruções, menos o seu agente vai alucinar.
