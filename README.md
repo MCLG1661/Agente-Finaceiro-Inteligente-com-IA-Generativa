@@ -1,6 +1,9 @@
 # 💰 Edu - Agente Financeiro Inteligente com IA Generativa
-![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-green?style=for-the-badge)
-![Versão](https://img.shields.io/badge/Versão-1.0.0-blue?style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.28.0-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-2.1.0-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![Ollama](https://img.shields.io/badge/Ollama-0.1.32-000000?style=for-the-badge&logo=ollama&logoColor=white)
+![Llama](https://img.shields.io/badge/Llama-3.2%201B-FF6F00?style=for-the-badge&logo=meta&logoColor=white)
 
 
 ## 📝Contexto
