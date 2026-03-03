@@ -243,16 +243,33 @@ Como é avaliada a qualidade do agente :
 
 ---
 
-### 🎤 Pitch
+## Fluxo de Tratamento de Erros
 
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando :
-
-- Qual problema seu agente resolve ?
-- Como ele funciona na prática ?
-- Por que essa solução é inovadora ?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
-
+```
+flowchart LR
+    E[Erro Detectado] --> T{Qual tipo?}
+    
+    T -->|Arquivo não encontrado| F[FileNotFoundError]
+    T -->|JSON inválido| J[json.JSONDecodeError]
+    T -->|Ollama offline| O[ConnectionError]
+    T -->|Timeout| TO[TimeoutError]
+    T -->|Input inválido| I[ValueError]
+    
+    F --> M1["📢 st.error() + DataFrame vazio"]
+    J --> M2["📢 st.error() + dict vazio"]
+    O --> M3["📢 'Ollama não está rodando'"]
+    TO --> M4["📢 'Tempo limite excedido'"]
+    I --> M5["📢 'Entrada inválida'"]
+    
+    M1 --> C[Continua com dados parciais]
+    M2 --> C
+    M3 --> R[Retorna mensagem amigável]
+    M4 --> R
+    M5 --> R
+    
+    C --> UI[Interface continua]
+    R --> UI
+```
 ---
 
 ## 🛠️ Ferramentas Sugeridas
