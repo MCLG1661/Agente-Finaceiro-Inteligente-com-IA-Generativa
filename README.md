@@ -313,6 +313,44 @@ Como é avaliada a qualidade do agente :
 
 ---
 
+## Fluxo de Decisão do Agente
+
+```mermaid
+
+stateDiagram-v2
+    [*] --> Aguardando
+    
+    Aguardando --> RecebeuPergunta: Usuário perguntou
+    
+    RecebeuPergunta --> ValidandoEntrada
+    
+    ValidandoEntrada --> EdgeCase: Pergunta fora do escopo
+    ValidandoEntrada --> ConsultaBase: Pergunta válida
+    
+    EdgeCase --> RespostaEdge: "Sou educador financeiro..."
+    RespostaEdge --> Aguardando
+    
+    ConsultaBase --> DadosEncontrados: Informação disponível
+    ConsultaBase --> DadosNaoEncontrados: Informação não disponível
+    
+    DadosNaoEncontrados --> RespostaNaoSei: "Não tenho essa informação..."
+    RespostaNaoSei --> Aguardando
+    
+    DadosEncontrados --> MontandoContexto
+    
+    MontandoContexto --> ChamandoLLM
+    
+    ChamandoLLM --> ValidandoResposta
+    
+    ValidandoResposta --> RespostaFinal: ✅ OK
+    ValidandoResposta --> RespostaAlternativa: ⚠️ Conteúdo suspeito
+    
+    RespostaFinal --> Aguardando
+    RespostaAlternativa --> Aguardando
+
+```
+---
+
 ## Fluxo de Tratamento de Erros
 
 ```mermaid
