@@ -155,6 +155,60 @@ Camada de Cache
 
 ---
 
+```
+erDiagram
+    PERFIL ||--o{ META : possui
+    PERFIL {
+        string nome
+        int idade
+        string profissao
+        float renda_mensal
+        string perfil_investidor
+        string objetivo_principal
+        float patrimonio_total
+        float reserva_emergencia
+        boolean aceita_risco
+    }
+    
+    META {
+        string descricao
+        float valor_necessario
+        date prazo
+        float progresso
+    }
+    
+    TRANSACAO ||--|| PERFIL : pertence
+    TRANSACAO {
+        date data
+        string descricao
+        string categoria
+        float valor
+        string tipo
+    }
+    
+    ATENDIMENTO ||--|| PERFIL : historico
+    ATENDIMENTO {
+        date data
+        string canal
+        string tema
+        string resumo
+        boolean resolvido
+    }
+    
+    PRODUTO {
+        string nome
+        string categoria
+        string risco
+        string rentabilidade
+        float aporte_minimo
+        string indicado_para
+    }
+    
+    PERFIL }o--o{ PRODUTO : "pode se interessar"
+```
+
+----
+
 ## 📁 Estrutura do Projeto
 
 ```
