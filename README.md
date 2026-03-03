@@ -245,7 +245,8 @@ Como é avaliada a qualidade do agente :
 
 ## Fluxo de Tratamento de Erros
 
-```
+```mermaid
+
 flowchart LR
     E[Erro Detectado] --> T{Qual tipo?}
     
