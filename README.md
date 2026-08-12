@@ -103,37 +103,7 @@ O projeto contempla mecanismos para :
 
 ## 🏗️ Arquitetura
 
-```text
-Usuário
-   ↓
-Interface
-   ↓
-Validação de Entrada
-   ↓
-Detecção de Edge Cases
-   ↓
-Construção de Contexto
-   ↓
-┌─────────────────────────────┐
-│ Dados estruturados          │
-│                             │
-│ • Perfil                    │
-│ • Transações                │
-│ • Histórico                 │
-│ • Produtos                  │
-└──────────────┬──────────────┘
-               ↓
-          Ollama
-               ↓
-        Llama 3.2
-               ↓
-     Geração da Resposta
-               ↓
-     Validação de Saída
-               ↓
-            Usuário
-
-```
+<img width="1536" height="1024" alt="ChatGPT Image 12 de ago  de 2026, 14_29_25" src="https://github.com/user-attachments/assets/bb7e243e-d971-4e88-ae40-2b0738e36628" />
 
 ---
 
