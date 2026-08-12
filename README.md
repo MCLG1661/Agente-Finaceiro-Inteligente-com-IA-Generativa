@@ -142,8 +142,11 @@ Construção de Contexto
 O agente utiliza quatro conjuntos de dados estruturados :
 
 `perfil_investidor.json` - Contextualização do perfil utilizado na demonstração
+
 `transacoes.csv` - Histórico de transações
+
 `historico_atendimento.csv` - Contexto de interações anteriores
+
 `produtos_financeiros.json` - Informações sobre produtos disponíveis
 
 Os dados utilizados fazem parte do ambiente demonstrativo do projeto.
