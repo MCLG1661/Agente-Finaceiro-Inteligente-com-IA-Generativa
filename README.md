@@ -1,424 +1,317 @@
 # 💰 Edu - Agente Financeiro Inteligente com IA Generativa
 
-![Agente](https://img.shields.io/badge/Agente-Edu%20Financeiro-8A2BE2?style=for-the-badge)
-![Persona](https://img.shields.io/badge/Persona-Consultivo-FF69B4?style=for-the-badge)
-![Anti-alucinação](https://img.shields.io/badge/Anti--alucinação-Ativo-success?style=for-the-badge)
-![Edge Cases](https://img.shields.io/badge/Edge%20Cases-Tratados-green?style=for-the-badge)
-![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-1.28.0-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-2.1.0-150458?style=for-the-badge&logo=pandas&logoColor=white)
-![Ollama](https://img.shields.io/badge/Ollama-0.1.32-000000?style=for-the-badge&logo=ollama&logoColor=white)
-![Llama](https://img.shields.io/badge/Llama-3.2%201B-FF6F00?style=for-the-badge&logo=meta&logoColor=white)
-![Linhas de Código](https://img.shields.io/badge/Linhas-500+-blue?style=for-the-badge)
-![Arquivos](https://img.shields.io/badge/Arquivos-10-green?style=for-the-badge)
-![Cobertura](https://img.shields.io/badge/Cobertura-85%25-brightgreen?style=for-the-badge)
-![Tests](https://img.shields.io/badge/Tests-Passing-brightgreen?style=for-the-badge)
-![Code Style](https://img.shields.io/badge/Code%20Style-Black-000000?style=for-the-badge)
-![Security](https://img.shields.io/badge/Security-A%2B-success?style=for-the-badge)
-![requests](https://img.shields.io/badge/requests-2.31.0-FF6F00?style=flat-square)
-![plotly](https://img.shields.io/badge/plotly-5.17.0-3F4F75?style=flat-square&logo=plotly)
- 
----
- 
-## 📝Contexto
+*Educação financeira contextual com Python, LLM local e dados estruturados*
 
-Os assistentes virtuais nesse setor, estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, o objetivo é idealizar e prototipar um agente financeiro que utiliza IA Generativa para :
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-Data%20App-FF4B4B?logo=streamlit&logoColor=white)
+![Ollama](https://img.shields.io/badge/Ollama-Local%20LLM-000000)
+![Llama](https://img.shields.io/badge/Llama-3.2-0467DF)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Processing-150458?logo=pandas&logoColor=white)
+![Generative AI](https://img.shields.io/badge/Generative%20AI-Financial%20Education-8A2BE2)
+![JSON](https://img.shields.io/badge/Data-JSON-000000?logo=json&logoColor=white)
+![DIO](https://img.shields.io/badge/DIO-Bradesco%20GenAI-5A0FC8)
+![Status](https://img.shields.io/badge/Status-Protótipo-blue)
 
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
+O **Edu** é um protótipo de agente de IA Generativa voltado à **educação financeira contextual**.
+
+O projeto foi desenvolvido como desafio final do **Bootcamp GenAI — DIO / Bradesco**, explorando como um modelo de linguagem executado localmente pode utilizar informações estruturadas para produzir explicações financeiras contextualizadas.
+
+A solução combina **Python, dados JSON/CSV e um LLM executado via Ollama**, incorporando mecanismos de validação, contexto conversacional e tratamento de perguntas fora do escopo.
+
+> ⚠️ O Edu possui finalidade educacional e demonstrativa. Não realiza consultoria financeira individualizada nem substitui profissionais qualificados.
 
 ---
 
-## 🎯 Funcionalidades
+## 🎯 Objetivo
 
-O que o Edu faz :
+Explorar a construção de um agente de IA capaz de utilizar contexto e dados estruturados para tornar explicações financeiras mais relevantes para diferentes situações.
 
-- ✅ Explica conceitos financeiros de forma simples
-- ✅ Usa dados do cliente como exemplos práticos
-- ✅ Responde dúvidas sobre produtos financeiros
-- ✅ Analisa padrões de gastos de forma educativa
+O projeto trabalha conceitos como :
 
-O que o Edu NÃO faz :
-
-- ❌ Não recomenda investimentos específicos
-- ❌ Não acessa dados bancários sensíveis
-- ❌ Não substitui um profissional certificado
-
-## 🔐 Princípios de Segurança
-
-1. Nunca recomenda investimentos - Apenas educa
-2. Baseado em dados reais - Sem alucinações
-3. Edge cases tratados - Perguntas fora do escopo
-4. Transparência - Assume quando não sabe
-5. Privacidade - Dados locais, sem nuvem
-
-> [!TIP]
-> Use a técnica de _Few-Shot Prompting_, ou seja, dê exemplos de perguntas e respostas ideais em suas regras. Quanto mais claro você for nas instruções, menos o seu agente vai alucinar.
+- Inteligência Artificial Generativa
+- LLMs locais
+- Context Engineering
+- Prompt Engineering
+- Dados estruturados
+- Personalização de respostas
+- Tratamento de edge cases
+- Guardrails
+- Privacidade
+- Experiência conversacional
 
 ---
 
-## 🏗️ Detalhamento da Arquitetura
+## 💡 Problema
 
-```mermaid
-flowchart TB
-    subgraph UI["CAMADA DE APRESENTAÇÃO (Frontend)"]
-        A[Usuário] --> B[Interface Streamlit]
-        B --> C[Chat Interativo]
-        B --> D[Sidebar com Dados]
-        B --> E[Gráficos e Métricas]
-    end
+Assistentes convencionais frequentemente respondem perguntas de maneira genérica.
 
-    subgraph APP["CAMADA DE APLICAÇÃO (Backend)"]
-        F[app.py] --> G[agente.py]
-        G --> H[utils.py]
-        G --> I[config.py]
-        
-        subgraph PROC["Processamento"]
-            J[Validador de Entrada]
-            K[Detector de Edge Cases]
-            L[Montador de Contexto]
-            M[Gerenciador de Histórico]
-        end
-        
-        G --> PROC
-    end
+Em educação financeira, entretanto, uma explicação pode se tornar mais útil quando considera informações contextuais.
 
-    subgraph LLM["CAMADA DE IA"]
-        N[Ollama Client] --> O[(Modelo Local)]
-        O --> P[llama3.2:1b]
-        P --> Q[Geração de Respostas]
-    end
+O Edu explora uma arquitetura na qual :
 
-    subgraph DATA[" CAMADA DE DADOS"]
-        R[(perfil_investidor.json)]
-        S[(transacoes.csv)]
-        T[(historico_atendimento.csv)]
-        U[(produtos_financeiros.json)]
-        
-        subgraph CACHE["Cache em Memória"]
-            V[st.cache_data]
-            W[st.session_state]
-        end
-    end
+```text
+Pergunta
+   ↓
+Validação
+   ↓
+Contexto
+   ↓
+Dados disponíveis
+   ↓
+LLM
+   ↓
+Validação da resposta
+   ↓
+Explicação contextualizada
 
-    subgraph SEC["CAMADA DE SEGURANÇA"]
-        X[Filtro Anti-Jailbreak]
-        Y[Validação de Saída]
-        Z[Protocolo 'Não Sei']
-        AA[Limite de Tokens]
-    end
-
-    %% Conexões principais
-    C --> F
-    D --> F
-    E --> F
-    
-    G --> N
-    PROC --> SEC
-    SEC --> LLM
-    
-    H --> DATA
-    I --> DATA
-    DATA --> CACHE
-    
-    LLM --> G
-    G --> C
-```    
----
-
-## 📋 Resumo da Arquitetura
-
-Camadas da Aplicação
-
-Apresentação (Streamlit)
-- Interface de chat com o usuário
-- Gráficos e métricas em tempo real
-- Sidebar com dados do cliente
-
-Aplicação (Python)
-- Lógica principal do agente Edu
-- Processamento de perguntas
-- Gerenciamento de contexto
-
-IA (Ollama + Llama 3.2)
-- Modelo local para geração de respostas
-- Temperatura baixa para consistência
-- Respostas concisas e educativas
-
-Dados (JSON + CSV)
-- Perfil do cliente
-- Histórico de transações
-- Catálogo de produtos
-
-Segurança (Validações)
-- Filtros de entrada
-- Detecção de edge cases
-- Protocolo "Não sei"
-
-Camada de Cache
-- Carregamento otimizado de dados
-- Persistência de contexto
-- Recarregamento periódico (1 hora)       
-
----
-
-## Esta arquitetura garante :
-
-- ✅ Segurança: Múltiplas camadas de validação
-- ✅ Performance: Cache e otimizações
-- ✅ Confiabilidade: Tratamento de erros robusto
-- ✅ Manutenibilidade: Código organizado por responsabilidades
-- ✅ Escalabilidade: Fácil adicionar novos dados/funcionalidades
-
----
-
-## Arquitetura de Dados e Relacionamentos
-
-```mermaid
-erDiagram
-    PERFIL ||--o{ META : possui
-    PERFIL {
-        string nome
-        int idade
-        string profissao
-        float renda_mensal
-        string perfil_investidor
-        string objetivo_principal
-        float patrimonio_total
-        float reserva_emergencia
-        boolean aceita_risco
-    }
-    
-    META {
-        string descricao
-        float valor_necessario
-        date prazo
-        float progresso
-    }
-    
-    TRANSACAO ||--|| PERFIL : pertence
-    TRANSACAO {
-        date data
-        string descricao
-        string categoria
-        float valor
-        string tipo
-    }
-    
-    ATENDIMENTO ||--|| PERFIL : historico
-    ATENDIMENTO {
-        date data
-        string canal
-        string tema
-        string resumo
-        boolean resolvido
-    }
-    
-    PRODUTO {
-        string nome
-        string categoria
-        string risco
-        string rentabilidade
-        float aporte_minimo
-        string indicado_para
-    }
-    
-    PERFIL }o--o{ PRODUTO : "pode se interessar"
-```
-
-----
-
-## 📁 Estrutura do Projeto
-
-```
-edu-agente-financeiro/
-│
-├── 📂 src/                          # Código fonte da aplicação
-│   ├── app.py                        # Interface Streamlit (front-end)
-│   ├── agente.py                      # Lógica principal do agente Edu
-│   ├── config.py                       # Configurações e variáveis de ambiente
-│   ├── utils.py                         # Funções auxiliares (carregar dados, validações)
-│   └── requirements.txt                 # Dependências do projeto
-│
-├── 📂 data/                          # Base de conhecimento do agente
-│   ├── perfil_investidor.json          # Perfil do cliente (João Silva)
-│   ├── transacoes.csv                   # Histórico de transações financeiras
-│   ├── historico_atendimento.csv        # Atendimentos anteriores
-│   └── produtos_financeiros.json        # Catálogo de produtos financeiros
-│
-├── 📂 docs/                           # Documentação do projeto
-│   ├── 01-documentacao-agente.md       # Persona, caso de uso e arquitetura
-│   ├── 02-prompts.md                    # System prompt e exemplos de interação
-│   ├── 03-edge-cases.md                  # Tratamento de casos extremos
-│   ├── 04-metricas.md                     # Avaliação e métricas de qualidade
-│   └── 05-pitch.md                        # Roteiro do pitch de 3 minutos
-│
-├── 📂 examples/                        # Exemplos de uso e referências
-│   ├── perguntas_comuns.txt              # FAQ e perguntas frequentes
-│   └── simulacoes.md                      # Exemplos de simulações financeiras
-│
-├── .env                                # Variáveis de ambiente (chave da API)
-├── .gitignore                           # Arquivos ignorados pelo Git
-└── README.md                             # Documentação principal do projeto
-````
----
-
-## Como Executar
-
-1. Instalar Ollama
-
-```bash
-# Baixar em: ollama.com
-ollama pull gpt-oss
-ollama serve
-```
-
-2. Instalar Dependências
-
-```bash
-pip install streamlit pandas requests
-```
-
-3. Rodar o Edu
-
-```bash
-streamlit run src/app.py
 ```
 ---
 
-## 💻 Requisitos Técnicos
+## ✨ Funcionalidades
 
-- Python: 3.10 ou superior
-- Streamlit: 1.28.0
-- Ollama: 0.1.32+
-- Modelo: Llama 3.2 1B (ou similar)
-- Memória: 4GB RAM mínimo
-- Armazenamento: 1GB para o modelo
+💬 Assistente Conversacional
 
---- 
+O usuário pode fazer perguntas relacionadas a conceitos e informações financeiras contempladas pelo escopo da aplicação.
 
-## 🛡️ Segurança e Boas Práticas
+🧠 Contextualização
 
-- ✅ Anti-alucinação: Respostas baseadas APENAS nos dados fornecidos
-- ✅ Edge Cases: Tratamento para perguntas fora do escopo
-- ✅ Validação de Entrada: Filtro para evitar jailbreak
-- ✅ Timeout: Prevenção contra travamentos
-- ✅ Cache: Otimização de performance
+O agente utiliza informações estruturadas para contextualizar suas respostas.
+
+📊 Análise Educativa de Dados
+
+Dados de transações podem ser utilizados para demonstrar padrões e apoiar explicações sobre organização financeira.
+
+📚 Base de Produtos
+
+Uma base estruturada permite ao agente consultar informações disponíveis sobre produtos financeiros para fins educativos.
+
+🗂️ Histórico de Atendimento
+
+O histórico permite explorar conceitos de continuidade e contexto em experiências conversacionais.
+
+🛡️ Guardrails
+
+O projeto contempla mecanismos para :
+
+- Validar entradas
+- Identificar perguntas fora do escopo
+- Tratar tentativas de desvio das instruções
+- Limitar respostas quando informações não estão disponíveis
+- Reduzir respostas não fundamentadas
+
+---
+
+## 🏗️ Arquitetura
+
+```text
+Usuário
+   ↓
+Interface
+   ↓
+Validação de Entrada
+   ↓
+Detecção de Edge Cases
+   ↓
+Construção de Contexto
+   ↓
+┌─────────────────────────────┐
+│ Dados estruturados          │
+│                             │
+│ • Perfil                    │
+│ • Transações                │
+│ • Histórico                 │
+│ • Produtos                  │
+└──────────────┬──────────────┘
+               ↓
+          Ollama
+               ↓
+        Llama 3.2
+               ↓
+     Geração da Resposta
+               ↓
+     Validação de Saída
+               ↓
+            Usuário
+
+```
 
 ---
 
 ## 📚 Base de Conhecimento
 
-| Arquivo | Formato | Para que serve no Edu ? |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Analisar o histórico de transações e usar essas informações de forma a alertar ou orientar o cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores, ou seja, dar continuidade ao atendimento de forma mais eficiente  |
-| `perfil_investidor.json` | JSON | Personalizar as recomendações e explicações sobre as dúvidas e as necessidades de aprendizado do cliente |
-| `produtos_financeiros.json` | JSON | Conhecer os produtos e serviços disponíveis para que eles possam ser explicados e recomendados ao cliente |
+O agente utiliza quatro conjuntos de dados estruturados :
+
+`perfil_investidor.json` - Contextualização do perfil utilizado na demonstração
+`transacoes.csv` - Histórico de transações
+`historico_atendimento.csv` - Contexto de interações anteriores
+`produtos_financeiros.json` - Informações sobre produtos disponíveis
+
+Os dados utilizados fazem parte do ambiente demonstrativo do projeto.
 
 ---
 
-## 🧮 Avaliação e Métricas
+## 🔐 Privacidade e Segurança
 
-Como é avaliada a qualidade do agente :
+Um dos princípios explorados no projeto é a execução local do modelo por meio do **Ollama**.
 
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
+A arquitetura também trabalha conceitos de :
+
+- Validação de entrada
+- Tratamento de edge cases
+- Controle de escopo
+- Validação das respostas
+- Protocolo de ausência de informação
+- Limitação de contexto
+- Dados locais
+
+O objetivo é experimentar práticas para tornar aplicações baseadas em LLMs mais controláveis e previsíveis.
 
 ---
 
-## Fluxo de Decisão do Agente
+## 🛠️ Tecnologias
 
-```mermaid
-stateDiagram-v2
-    [*] --> Aguardando
-    
-    Aguardando --> RecebeuPergunta: Usuário perguntou
-    
-    RecebeuPergunta --> ValidandoEntrada
-    
-    ValidandoEntrada --> EdgeCase: Pergunta fora do escopo
-    ValidandoEntrada --> ConsultaBase: Pergunta válida
-    
-    EdgeCase --> RespostaEdge: "Sou educador financeiro..."
-    RespostaEdge --> Aguardando
-    
-    ConsultaBase --> DadosEncontrados: Informação disponível
-    ConsultaBase --> DadosNaoEncontrados: Informação não disponível
-    
-    DadosNaoEncontrados --> RespostaNaoSei: "Não tenho essa informação..."
-    RespostaNaoSei --> Aguardando
-    
-    DadosEncontrados --> MontandoContexto
-    
-    MontandoContexto --> ChamandoLLM
-    
-    ChamandoLLM --> ValidandoResposta
-    
-    ValidandoResposta --> RespostaFinal: ✅ OK
-    ValidandoResposta --> RespostaAlternativa: ⚠️ Conteúdo suspeito
-    
-    RespostaFinal --> Aguardando
-    RespostaAlternativa --> Aguardando
+**Python** - Desenvolvimento do agente
+
+**Ollama** - Execução local do LLM
+
+**Llama 3.2** - Modelo de linguagem 
+
+**Pandas** - Processamento dos dados
+
+**CSV** - Dados transacionais e históricos
+
+**JSON** - Perfil e catálogo estruturado
+
+**Streamlit** - Interface prevista/utilizada na experiência
+
+---
+
+## 📂 Estrutura Atual do Repositório
+
+```text
+Agente-Finaceiro-Inteligente-com-IA-Generativa/
+│
+├── src.py
+├── perfil_investidor.json
+├── produtos_financeiros.json
+├── historico_atendimento.csv
+├── transacoes.csv
+└── README.md
 
 ```
+
 ---
 
-## Fluxo de Tratamento de Erros
+## 🧠 Fluxo de Decisão
 
-```mermaid
-flowchart LR
-    E[Erro Detectado] --> T{Qual tipo?}
-    
-    T -->|Arquivo não encontrado| F[FileNotFoundError]
-    T -->|JSON inválido| J[json.JSONDecodeError]
-    T -->|Ollama offline| O[ConnectionError]
-    T -->|Timeout| TO[TimeoutError]
-    T -->|Input inválido| I[ValueError]
-    
-    F --> M1["📢 st.error() + DataFrame vazio"]
-    J --> M2["📢 st.error() + dict vazio"]
-    O --> M3["📢 'Ollama não está rodando'"]
-    TO --> M4["📢 'Tempo limite excedido'"]
-    I --> M5["📢 'Entrada inválida'"]
-    
-    M1 --> C[Continua com dados parciais]
-    M2 --> C
-    M3 --> R[Retorna mensagem amigável]
-    M4 --> R
-    M5 --> R
-    
-    C --> UI[Interface continua]
-    R --> UI
+```text
+Pergunta
+   ↓
+Entrada válida?
+   ├── NÃO → Resposta de controle
+   │
+   └── SIM
+        ↓
+Informação disponível?
+   ├── NÃO → Informa limitação
+   │
+   └── SIM
+        ↓
+Construção do contexto
+        ↓
+LLM
+        ↓
+Validação
+        ↓
+Resposta
+
 ```
----
-
-## 🛠️ Ferramentas Sugeridas
-
-Todas as ferramentas abaixo possuem versões gratuitas:
-
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
 
 ---
 
-## ✨ Dicas Finais
+## 💡 Competências Demonstradas
 
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
+- Python
+- Inteligência Artificial Generativa
+- LLMs
+- Ollama
+- Llama
+- Prompt Engineering
+- Context Engineering
+- Processamento de dados
+- Pandas
+- JSON e CSV
+- Guardrails
+- Tratamento de edge cases
+- Arquitetura de agentes
+- Privacidade em aplicações de IA
+- Git e GitHub
 
---- 
+---
+
+## 🚀 Possíveis Evoluções
+
+- Interface Streamlit completa
+- Arquitetura modular
+- Persistência de sessões
+- Testes automatizados
+- Avaliação sistemática das respostas
+- Observabilidade
+- Logs estruturados
+- API com FastAPI
+- Containerização com Docker
+- Diferentes modelos locais
+- RAG sobre conteúdos de educação financeira
+- Avaliação de grounding e factualidade
+
+---
+
+## ⚠️ Escopo e Limitações
+
+O **Edu é um projeto educacional e experimental**.
+
+A aplicação foi desenvolvida para demonstrar conceitos relacionados a IA Generativa, contexto, dados estruturados e segurança de agentes.
+
+O sistema :
+
+- Não deve ser utilizado para decisões financeiras reais
+- Não substitui orientação profissional
+- Não garante resultados financeiros
+- Trabalha com dados demonstrativos
+- Possui escopo limitado às informações disponibilizadas ao agente
+
+---
+
+## 🎓 Contexto Acadêmico
+
+Projeto desenvolvido como **Desafio Final do Bootcamp GenAI — DIO / Bradesco**.
+
+O desafio teve como objetivo explorar a criação de uma experiência digital de relacionamento financeiro utilizando IA Generativa, dados contextuais e boas práticas de experiência do usuário.
+
+---
+
+## 🤝 Como Contribuir
+
+Contribuições são bem-vindas, especialmente nas áreas de:
+
+- LLMs locais
+- Guardrails
+- Avaliação de agentes
+- RAG
+- Prompt e Context Engineering
+- UX conversacional
+- APIs
+- Testes
+- Observabilidade
+
+1. Faça um Fork do repositório
+2. Crie uma branch para sua funcionalidade
+3. Implemente e teste as alterações
+4. Faça o commit
+5. Envie sua branch
+6. Abra um Pull Request descrevendo a contribuição
+
+---
 
 ## 🙏 Agradecimentos
 - DIO
@@ -427,7 +320,16 @@ Todas as ferramentas abaixo possuem versões gratuitas:
 
 ---
 
-## Autor
-- Marcus Guedes
-- Linkedin : https://www.linkedin.com/in/marcusguedes/
-- GitHub : https://github.com/MCLG1661 
+## 👨‍💻 Autor
+
+**Marcus Guedes**
+
+Marketing | Data Science | Inteligência Artificial | Gestão de Projetos
+
+GitHub: MCLG1661
+
+LinkedIn: Marcus Guedes
+
+---
+
+💰 **Edu — IA Generativa aplicada à educação financeira contextual.**
