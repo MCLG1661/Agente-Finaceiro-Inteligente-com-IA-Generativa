@@ -282,8 +282,8 @@ O código não envia indiscriminadamente todos os registros ao modelo.
 A implementação limita determinadas fontes:
 
 ```text
-Transações → até 10 registros
-Histórico → até 5 registros
+Transações → até 10 registros, ordenados por data decrescente
+Histórico → até 5 registros, ordenados por data decrescente
 Produtos → até 5 produtos
 ```
 
@@ -342,7 +342,7 @@ Modelo configurado:
 llama3.2:1b
 ```
 
-A aplicação também verifica se o servidor Ollama está disponível através de:
+A aplicação verifica se o servidor Ollama responde com HTTP 200 no endpoint abaixo. A geração limita a saída a 500 tokens com `num_predict`.
 
 ```text
 http://localhost:11434/api/tags
@@ -410,6 +410,8 @@ e as mensagens são apresentadas através de:
 ```python
 st.chat_message()
 ```
+
+A interface exibe permanentemente um aviso de finalidade educacional e uso de dados fictícios.
 
 A interface também mantém as mensagens da sessão utilizando:
 
