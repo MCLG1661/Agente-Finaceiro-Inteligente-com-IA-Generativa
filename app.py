@@ -70,8 +70,8 @@ def carregar_produtos() -> list:
 def verificar_ollama() -> bool:
     """Verifica se o servidor Ollama está rodando"""
     try:
-        requests.get("http://localhost:11434/api/tags", timeout=2)
-        return True
+        r = requests.get("http://localhost:11434/api/tags", timeout=2)
+        return r.status_code == 200
     except:
         return False
 
@@ -106,12 +106,12 @@ RESERVA: R$ {perfil.get('reserva_emergencia_atual', 0):.2f}
     # Transações (limitar a 10)
     if not transacoes.empty:
         contexto += "TRANSAÇÕES RECENTES (últimas 10):\n"
-        contexto += transacoes.head(10).to_string(index=False) + "\n\n"
+        contexto += transacoes.sort_values("data", ascending=False, kind="stable").head(10).to_string(index=False) + "\n\n"
     
     # Histórico (limitar a 5)
     if not historico.empty:
         contexto += "ÚLTIMOS ATENDIMENTOS:\n"
-        contexto += historico.head(5).to_string(index=False) + "\n\n"
+        contexto += historico.sort_values("data", ascending=False, kind="stable").head(5).to_string(index=False) + "\n\n"
     
     # Produtos (apenas nomes e descrições resumidas)
     if produtos:
@@ -163,7 +163,7 @@ def perguntar(msg: str, contexto: str) -> str:
                 "stream": False,
                 "options": {
                     "temperature": 0.3,
-                    "max_tokens": 500
+                    "num_predict": 500
                 }
             },
             timeout=TIMEOUT
@@ -190,6 +190,7 @@ def main():
     )
     
     st.title("🎓 Edu, o Educador Financeiro")
+    st.warning("Protótipo educacional com dados fictícios. Não oferece aconselhamento financeiro nem recomendações individuais de investimentos.")
     
     # Barra lateral com status
     with st.sidebar:
